@@ -3,8 +3,20 @@ public class SuperArray{
     private int size;
 
     public SuperArray(){
-        int[][]SuperArray = new int[10][10];
+        data = new String[10];
+        size = 0;
     }
-    
+    public int size(){
+        return this.size;
+    }
+    public boolean add(String element){
+        data[size] = element; 
+        size++;
+        return true;
+    }
+    public String get(int index){
+        return data[index];
+    }
+
 
 }
