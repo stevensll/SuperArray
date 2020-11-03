@@ -10,6 +10,9 @@ public class SuperArray{
         return size;
     }
     public boolean add(String element){
+        if (size == data.length){
+            resize();
+        }
         data[size] = element; 
         size++;
         return true;
@@ -18,9 +21,6 @@ public class SuperArray{
         return data[index];
     }
     public String set(int index, String element){
-        if (size == data.length){
-            resize();
-        }
         String replaced = data[index];
         data[index] = element;
         return replaced;
