@@ -9,6 +9,7 @@ public class Steven_Tester {
         for (int i = 0;i<50;i++ ){
             words.add(String.valueOf(i));
         }
+        /*
         for (int i = 0;i<50;i++ ){
             System.out.println(words.get(i)); // i should be at 46 since 50 - 3 = 47. 47 is 0-46.
         }
@@ -17,5 +18,11 @@ public class Steven_Tester {
             words.set(i, "resized" + String.valueOf(i));
             System.out.println(words.get(i)); // i should be at 46 since 50 - 3 = 47. 47 is 0-46.
         }
+        */
+        System.out.println(words.toString());
+        System.out.println(words.contains("kani"));
+        words.clear();
+        System.out.println(words.contains("kani"));
+        System.out.println(words.toString());
     }
 }

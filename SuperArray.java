@@ -32,6 +32,31 @@ public class SuperArray{
         }
         data = newArr;
     }
+    public boolean isEmpty(){
+        return(size==0);
+    }
+    public void clear(){
+        for (int i= 0; i < size; i++){
+            data[i] = null;
+        }
+        size = 0;
+    }
+    public String toString(){
+        String array = "[";
+        if (size == 0) array = "[]";
+        for (int i = 0; i < size; i++) {
+            if (i == size - 1) array += String.valueOf(data[i]) + "]";
+            else array += String.valueOf(data[i]) + ", ";
+        }
+        return array;
+    }
+    public boolean contains(String s){
+        boolean has = false;
+        for (int i =0; i < size; i++){
+            if (data[i].equals(s)) has = true;
+        }
+        return has;
+    }
 
 
 }
