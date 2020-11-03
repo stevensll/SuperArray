@@ -26,7 +26,7 @@ public class SuperArray{
         return replaced;
     }
     public void resize(){
-        String [] newArr = new String [20];
+        String [] newArr = new String [size + 10];
         for (int i = 0; i < data.length;i++){
             newArr[i] = data[i];
         }
