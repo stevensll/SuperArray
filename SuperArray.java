@@ -26,7 +26,7 @@ public class SuperArray{
         return replaced;
     }
     public void resize(){
-        String [] newArr = new String [size * 2];
+        String [] newArr = new String [(size + 1) * 2];
         for (int i = 0; i < data.length;i++){
             newArr[i] = data[i];
         }
@@ -62,11 +62,19 @@ public class SuperArray{
         size = 0;
     }
     public void add(int index, String element){
-        String old = data[index];
-        data[index] = element;
-        for (int i = index + 1; i<size;i++){
-            data[i] = data[i-1];
+        size++;
+        // first check when adding to the last index if we go over capacity, we resize().
+        if (size > data.length) resize();
+        String temp [] = new String[size];
+        //temp[] is an array that copies the current values from index to size-1 in data.
+        for (int i = index; i<size;i++){
+            temp[i] = data[i]; 
         }
+        //copy all values from temp[] back to data, but shift it by 1.
+        for (int i = index + 1; i<size;i++){
+            data[i] = temp[i-1];
+        }                                                                                                                                                                                       
+        data[index] = element;
     }
     public String remove(int index){
         String removedString = data[index];
@@ -86,6 +94,12 @@ public class SuperArray{
         }
         return index;
     }
-        
-
+    public String[] toArray(){
+        String newArr [] = new String[size];
+        for (int i = 0; i < size; i++){
+            newArr[i] = data[i];
+        }
+        return newArr;
+    }      
+  
 }
