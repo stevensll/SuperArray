@@ -26,7 +26,7 @@ public class SuperArray{
         return replaced;
     }
     public void resize(){
-        String [] newArr = new String [size + 10];
+        String [] newArr = new String [size * 2];
         for (int i = 0; i < data.length;i++){
             newArr[i] = data[i];
         }
@@ -57,6 +57,35 @@ public class SuperArray{
         }
         return has;
     }
+    public SuperArray(int initialCapacity){
+        data = new String[initialCapacity];
+        size = 0;
+    }
+    public void add(int index, String element){
+        String old = data[index];
+        data[index] = element;
+        for (int i = index + 1; i<size;i++){
+            data[i] = data[i-1];
+        }
+    }
+    public String remove(int index){
+        String removedString = data[index];
 
+        return removedString;
+    }
+    public int indexOf(String s){
+        boolean found = false;
+        int index = -1;
+        if (found == false){
+            for (int i = 0; i < size; i++){
+                if (data[i].equals(s)){
+                    found = true;
+                    index = i;
+                }
+            }
+        }
+        return index;
+    }
+        
 
 }
