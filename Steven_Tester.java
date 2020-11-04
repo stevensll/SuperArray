@@ -28,11 +28,13 @@ public class Steven_Tester {
         System.out.println(words.contains("kani"));
         System.out.println(words.toString());
         */
+        /*
         SuperArray test2 = new SuperArray(0);
         System.out.println(test2.toString());
-        test2.add("cat");
+        test2.add(0,"cat");
         System.out.println(test2.toString());
-        /*
+        */
+        //
         SuperArray test2 = new SuperArray(4);
         test2.add("cat");
         test2.add("meow");
@@ -42,8 +44,15 @@ public class Steven_Tester {
         test2.add(2,"stuff");
         System.out.println(test2.toString());
         System.out.println(test2.size());
+        test2.remove(0);
+        System.out.println(test2.toString());
+        System.out.println(test2.size());
+
+
+        /*
         System.out.println(test2.indexOf("3"));
         System.out.println(Arrays.toString(test2.toArray()));
         */
+        //
     }
 }

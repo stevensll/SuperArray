@@ -78,7 +78,15 @@ public class SuperArray{
     }
     public String remove(int index){
         String removedString = data[index];
-
+        // similar approach to add(), but we shouldn't need to resize.
+        String temp[] = new String[size-(index+1)];
+        for (int i = 0; i<temp.length;i++) {
+            temp[i] = data[size-(index+1)];
+        }
+        size--;
+        for (int i = index; i<size;i++){
+            data[i] = temp[i-index];
+        }
         return removedString;
     }
     public int indexOf(String s){
