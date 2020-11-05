@@ -24,7 +24,7 @@ public class Steven_Tester {
 
         // TESTS FOR PART 2 / HW 15
         
-        // clear() and isEmpty() test
+        /* clear() and isEmpty() test
         System.out.println("clear() and isEmpty() test");
         SuperArray test1 = new SuperArray(3);
         test1.add("element1");
@@ -61,6 +61,28 @@ public class Steven_Tester {
         System.out.println(test2.indexOf("3"));     // -1
         System.out.println(test2.indexOf("dog"));   // 0
         System.out.println(Arrays.toString(test2.toArray()));
-        //
+        */
+        /*
+        SuperArray words = new SuperArray();
+        //grouped to save vertical space
+        words.add("kani");   words.add("uni");     words.add("ebi");     words.add("una");     
+        words.add("una");    words.add("ebi");     words.add("kani");    words.add("una");
+        words.add("una");    words.add("ebi");     words.add("toro"); 
+        System.out.println(words);
+        SuperArray.removeDuplicates(words);
+        System.out.println(words);
+        */
+        SuperArray test3 = new SuperArray();
+        test3.add("0");
+        test3.add("4");
+        test3.add("5");
+        test3.add("9");
+        SuperArray test4 = new SuperArray();
+        test4.add("9");
+        test4.add("5");
+        test4.add("9");
+        System.out.println(SuperArray.findOverlap(test3, test4));
+
     }
+
 }
