@@ -65,25 +65,28 @@ public class SuperArray{
         size++;
         // first check when adding to the last index if we go over capacity, we resize().
         if (size > data.length) resize();
-        String temp [] = new String[size];
-        //temp[] is an array that copies the current values from index to size-1 in data.
-        for (int i = index; i<size;i++){
-            temp[i] = data[i]; 
+        if (data[index] == null) data[index] = element;
+        else {
+            String temp [] = new String[size];
+            //temp[] is an array that copies the current values from index to size-1 in data.
+            for (int i = index; i<size;i++){
+                temp[i] = data[i]; 
+            }
+            //copy all values from temp[] back to data, but shift it by 1.
+            for (int i = index + 1; i<size;i++){
+                data[i] = temp[i-1];
+            }                                                                                                                                                                                       
+            data[index] = element;
         }
-        //copy all values from temp[] back to data, but shift it by 1.
-        for (int i = index + 1; i<size;i++){
-            data[i] = temp[i-1];
-        }                                                                                                                                                                                       
-        data[index] = element;
     }
     public String remove(int index){
         String removedString = data[index];
         // similar approach to add(), but we shouldn't need to resize.
         String temp[] = new String[size-(index+1)];
-        for (int i = 0; i<temp.length;i++) {
-            temp[i] = data[size-(index+1)];
+        for (int i = 0; i<temp.length-1;i++) {
+            temp[i] = data[temp.length + i];
         }
-        size--;
+                size--;
         for (int i = index; i<size;i++){
             data[i] = temp[i-index];
         }
@@ -92,12 +95,10 @@ public class SuperArray{
     public int indexOf(String s){
         boolean found = false;
         int index = -1;
-        if (found == false){
-            for (int i = 0; i < size; i++){
-                if (data[i].equals(s)){
-                    found = true;
-                    index = i;
-                }
+        for (int i = 0; i<size;i++){
+            if(found == false && data[i].equals(s)){
+                found = true;
+                index = i;
             }
         }
         return index;

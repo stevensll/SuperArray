@@ -21,38 +21,41 @@ public class Steven_Tester {
             System.out.println(words.get(i)); // i should be at 46 since 50 - 3 = 47. 47 is 0-46.
         }
         */
-        /*
-        System.out.println(words.toString());
-        System.out.println(words.contains("kani"));
-        words.clear();
-        System.out.println(words.contains("kani"));
-        System.out.println(words.toString());
-        */
-        /*
+
+        // TESTS FOR PART 2 / HW 15
+        
+        // clear() and isEmpty() test
+        SuperArray test1 = new SuperArray();
+        test1.add("element1");
+        test1.add("element2");
+        test1.add("element3");
+        test1.clear();
+        System.out.println(test1.size());
+        System.out.println(test1.isEmpty());
+        
+        // contains() and new SuperArray() test
         SuperArray test2 = new SuperArray(0);
-        System.out.println(test2.toString());
-        test2.add(0,"cat");
-        System.out.println(test2.toString());
-        */
-        //
-        SuperArray test2 = new SuperArray(4);
+        test2.add("dog");
+        test2.add("dog");
         test2.add("cat");
         test2.add("meow");
-        test2.add("dog");
-        test2.add("woof");
-        System.out.println(test2.size());
+        System.out.println(test2.contains("dog"));
+        System.out.println(test2.contains("dag"));
+        //
+
+        // add() and remove() test
         test2.add(2,"stuff");
         System.out.println(test2.toString());
         System.out.println(test2.size());
-        test2.remove(0);
+        //test2.remove(2);
         System.out.println(test2.toString());
         System.out.println(test2.size());
+        //
 
-
-        /*
+        // indexOf() test
         System.out.println(test2.indexOf("3"));
+        System.out.println(test2.indexOf("dog"));
         System.out.println(Arrays.toString(test2.toArray()));
-        */
         //
     }
 }
