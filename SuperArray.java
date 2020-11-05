@@ -62,34 +62,23 @@ public class SuperArray{
         size = 0;
     }
     public void add(int index, String element){
-        size++;
         // first check when adding to the last index if we go over capacity, we resize().
-        if (size > data.length) resize();
+        if (size ==  data.length) resize();
         if (data[index] == null) data[index] = element;
         else {
-            String temp [] = new String[size];
-            //temp[] is an array that copies the current values from index to size-1 in data.
-            for (int i = index; i<size;i++){
-                temp[i] = data[i]; 
+            for (int i = size - 1; i >= index; i--){
+                data[i+1] = data[i];
             }
-            //copy all values from temp[] back to data, but shift it by 1.
-            for (int i = index + 1; i<size;i++){
-                data[i] = temp[i-1];
-            }                                                                                                                                                                                       
             data[index] = element;
+            size++;
         }
     }
     public String remove(int index){
         String removedString = data[index];
-        // similar approach to add(), but we shouldn't need to resize.
-        String temp[] = new String[size-(index+1)];
-        for (int i = 0; i<temp.length-1;i++) {
-            temp[i] = data[temp.length + i];
+        for (int i=index; i<size; i++) {
+            data[i] = data[i+1];
         }
-                size--;
-        for (int i = index; i<size;i++){
-            data[i] = temp[i-index];
-        }
+        size--;
         return removedString;
     }
     public int indexOf(String s){

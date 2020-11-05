@@ -25,36 +25,41 @@ public class Steven_Tester {
         // TESTS FOR PART 2 / HW 15
         
         // clear() and isEmpty() test
-        SuperArray test1 = new SuperArray();
+        System.out.println("clear() and isEmpty() test");
+        SuperArray test1 = new SuperArray(3);
         test1.add("element1");
         test1.add("element2");
         test1.add("element3");
-        test1.clear();
-        System.out.println(test1.size());
-        System.out.println(test1.isEmpty());
-        
+        test1.clear();                      
+        System.out.println(test1.size());       //0
+        System.out.println(test1.isEmpty());    //true
+        //
+
         // contains() and new SuperArray() test
-        SuperArray test2 = new SuperArray(0);
+        System.out.println("contains() and new SuperArray() test");
+        SuperArray test2 = new SuperArray(3);
         test2.add("dog");
         test2.add("dog");
         test2.add("cat");
         test2.add("meow");
-        System.out.println(test2.contains("dog"));
-        System.out.println(test2.contains("dag"));
+        System.out.println(test2.contains("dog"));  //true
+        System.out.println(test2.contains("dag"));  //false
         //
 
-        // add() and remove() test
+        // toString(), add(), and remove() test
+        System.out.println("toString(), add(), and remove() test");
         test2.add(2,"stuff");
-        System.out.println(test2.toString());
-        System.out.println(test2.size());
-        //test2.remove(2);
-        System.out.println(test2.toString());
-        System.out.println(test2.size());
+        System.out.println(test2.toString());   //[dog,dog,stuff,cat,meow]
+        System.out.println(test2.size());       //5
+        test2.remove(2);
+        System.out.println(test2.toString());   //[dog, dog, cat, meow]
+        System.out.println(test2.size());   //4
         //
 
-        // indexOf() test
-        System.out.println(test2.indexOf("3"));
-        System.out.println(test2.indexOf("dog"));
+        // indexOf() and toArray() test
+        System.out.println("indexOf() and toArray() test");
+        System.out.println(test2.indexOf("3"));     // -1
+        System.out.println(test2.indexOf("dog"));   // 0
         System.out.println(Arrays.toString(test2.toArray()));
         //
     }
