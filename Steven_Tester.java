@@ -21,7 +21,6 @@ public class Steven_Tester {
             System.out.println(words.get(i)); // i should be at 46 since 50 - 3 = 47. 47 is 0-46.
         }
         */
-
         // TESTS FOR PART 2 / HW 15
         
         /* clear() and isEmpty() test
@@ -54,7 +53,8 @@ public class Steven_Tester {
         test2.remove(2);
         System.out.println(test2.toString());   //[dog, dog, cat, meow]
         System.out.println(test2.size());   //4
-        //
+        /
+
 
         // indexOf() and toArray() test
         System.out.println("indexOf() and toArray() test");
@@ -62,6 +62,9 @@ public class Steven_Tester {
         System.out.println(test2.indexOf("dog"));   // 0
         System.out.println(Arrays.toString(test2.toArray()));
         */
+
+        //HW 16 TESTS
+
         /*
         SuperArray words = new SuperArray();
         //grouped to save vertical space
@@ -72,6 +75,8 @@ public class Steven_Tester {
         SuperArray.removeDuplicates(words);
         System.out.println(words);
         */
+
+        /*
         SuperArray test3 = new SuperArray();
         test3.add("0");
         test3.add("4");
@@ -79,10 +84,12 @@ public class Steven_Tester {
         test3.add("9");
         SuperArray test4 = new SuperArray();
         test4.add("9");
-        test4.add("5");
+        test4.add("9");
+        test4.add("9");
         test4.add("9");
         System.out.println(SuperArray.findOverlap(test3, test4));
-
+        System.out.println(test4.lastIndexOf("8"));
+        */
     }
 
 }

@@ -99,22 +99,38 @@ public class SuperArray{
         }
         return newArr;
     }      
-    public static void removeDuplicates(SuperArray s){
-        for (int i = s.size()-1;i>=0;i--){
-            if (i != s.indexOf(s.get(i))){
-                s.remove(i);
+
+    public int lastIndexOf(String value){
+        int index = -1;
+        for (int i = size-1; i >= 0; i--){
+            if (index == -1 && data[i].equals(value)){
+                index = i;
             }
         }
+        return index;
     }
-    public static SuperArray findOverlap(SuperArray a, SuperArray b){
-        SuperArray overlap = new SuperArray();
-            for (int i = 0; i < a.size; i++){
-                if (b.contains(a.get(i))) {
-                    overlap.add(a.get(i));
-                }
-            }
-            removeDuplicates(overlap);
-        return overlap;
+    public boolean equals(SuperArray other){
+        boolean equals = false;
+        return equals;
     }
-    
 }
+/*
+
+You cannot call it with this syntax, but an example would be:
+findOverlap( ["9","1","2","2","3","4"], ["0","4","2","2","9"] ) returns a SuperArray: ["9","2","4"]
+
+
+Add these methods to your SuperArray:
+c) public int lastIndexOf(String value){ }
+d) public boolean equals(SuperArray other){ }
+SuperArrays are equal when all corresponding elements are equal. The capacity is NOT important.
+
+e) Finally write another static method in your Demo.java to take two SuperArrays and merge them together 
+public static SuperArray zip(SuperArray a, SuperArray b){  }
+return a new SuperArray that contains all elements of a, and all elements of b in the following sequence:
+[a0, b0, a1, b1, a2, b2 ... ]
+When either SuperArray is longer and you run out of strings in one, just fill the remaining elements with the rest of the longer SuperArray. 
+
+zip (  ["a","b","c","d","e","f"], ["0","1","2","3"] )  returns    ["a","0","b","1","c","2", "d","3","e","f"]
+zip (  ["a","b","c"], ["0","1","2","3","4"] )  returns    ["a","0","b","1","c","2","3","4"]  )
+*/
