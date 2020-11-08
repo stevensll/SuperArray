@@ -38,6 +38,7 @@ public class Demo {
     public static void main(String[]args){
     
     // removeDuplicates() test 
+    System.out.println();
     System.out.println("removeDuplicates() test");
     SuperArray dupTest = new SuperArray(); // Test order
     dupTest.add("2");     dupTest.add("1");    dupTest.add("3");
@@ -54,6 +55,7 @@ public class Demo {
     //
     
     // findOverlap() test
+    System.out.println();
     SuperArray foTest1 = new SuperArray(); 
     foTest1.add("1");   foTest1.add("2");   foTest1.add("5");
     foTest1.add("4");   foTest1.add("6");   foTest1.add("3");
@@ -77,6 +79,7 @@ public class Demo {
     //
     
     // lastIndexOf() and equals() test
+    System.out.println();
     System.out.println("lastIndexOf() and equals() test");
     SuperArray lTest = new SuperArray();
     lTest.add("foo");   lTest.add("dude");   lTest.add("foo");
@@ -117,6 +120,7 @@ public class Demo {
     //
     
     // zip() test
+    System.out.println();
     System.out.println("zip() test");
     SuperArray words = new SuperArray();
     words.add("one");   words.add("two");   words.add("three");
@@ -124,13 +128,16 @@ public class Demo {
     SuperArray numbers = new SuperArray();
     numbers.add("1");   numbers.add("2");   numbers.add("3");
     numbers.add("4");   numbers.add("5");   numbers.add("6");
-    System.out.println(zip(words,numbers).toString()+ " ~ should print [one, 1, two, 2, three, 3, four, 4, five, 5, six, 6]");
+    System.out.println(zip(words,numbers).toString()); 
+    System.out.println("[one, 1, two, 2, three, 3, four, 4, five, 5, six, 6] (expected)");
     // change to words.size() < numbers.size()
     words.remove(5);
-    System.out.println(zip(words,numbers).toString() + " ~ should print [one, 1, two, 2, three, 3, four, 4, five, 5, 6]");
+    System.out.println(zip(words,numbers).toString());
+    System.out.println("[one, 1, two, 2, three, 3, four, 4, five, 5, 6] (expected)");
     // change to words.size() > numbers.size()
     numbers.remove(5);
     numbers.remove(4);
-    System.out.println(zip(words,numbers)+ " ~ should print [one, 1, two, 2, three, 3, four, 4, five]");
+    System.out.println(zip(words,numbers));
+    System.out.println("[one, 1, two, 2, three, 3, four, 4, five] (expected)");
     }
 }
