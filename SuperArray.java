@@ -110,18 +110,20 @@ public class SuperArray{
         return index;
     }
     public boolean equals(SuperArray other){
-        boolean equals = false;
+        boolean equals = true;
+        if( this.size() == other.size()){
+            for(int i = 0; i < this.size(); i++){
+                if (! (this.get(i).equals(other.get(i)))){
+                    equals = false;
+                }
+            }
+        }
+        else equals = false;
         return equals;
     }
 }
 /*
 
-You cannot call it with this syntax, but an example would be:
-findOverlap( ["9","1","2","2","3","4"], ["0","4","2","2","9"] ) returns a SuperArray: ["9","2","4"]
-
-
-Add these methods to your SuperArray:
-c) public int lastIndexOf(String value){ }
 d) public boolean equals(SuperArray other){ }
 SuperArrays are equal when all corresponding elements are equal. The capacity is NOT important.
 
