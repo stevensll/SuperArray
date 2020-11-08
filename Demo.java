@@ -56,6 +56,7 @@ public class Demo {
     
     // findOverlap() test
     System.out.println();
+    System.out.println("findOverlap() test");
     SuperArray foTest1 = new SuperArray(); 
     foTest1.add("1");   foTest1.add("2");   foTest1.add("5");
     foTest1.add("4");   foTest1.add("6");   foTest1.add("3");
