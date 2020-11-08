@@ -124,9 +124,6 @@ public class SuperArray{
 }
 /*
 
-d) public boolean equals(SuperArray other){ }
-SuperArrays are equal when all corresponding elements are equal. The capacity is NOT important.
-
 e) Finally write another static method in your Demo.java to take two SuperArrays and merge them together 
 public static SuperArray zip(SuperArray a, SuperArray b){  }
 return a new SuperArray that contains all elements of a, and all elements of b in the following sequence:
