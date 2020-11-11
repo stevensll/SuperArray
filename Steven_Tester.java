@@ -91,7 +91,7 @@ public class Steven_Tester {
         System.out.println(test4.lastIndexOf("8"));
         */
 
-        //HW 17 TESTS
+        /*HW 17 TESTS
         // removeDuplicates() test 
         System.out.println();
         System.out.println("removeDuplicates() test");
@@ -195,7 +195,46 @@ public class Steven_Tester {
         numbers.remove(4);
         System.out.println(Demo.zip(words,numbers));
         System.out.println("[one, 1, two, 2, three, 3, four, 4, five] (expected)");
+        */
+
+        //HW 17 TESTS       
+        //
+        try {
+            SuperArray test = new SuperArray(-30);
+        } catch (IllegalArgumentException e){
+            System.out.println("SuperArray error!");
         }
-
-
+        SuperArray test = new SuperArray(10);
+        test.add("five");
+        try {
+            test.get(1);
+        } catch (IndexOutOfBoundsException e){
+            System.out.println("get() error!");
+        }
+        try {
+            test.set(1, "test");
+        } catch (IndexOutOfBoundsException e){
+            System.out.println("set() error!");
+        }
+        try {
+            test.add(2, "test");
+        } catch (IndexOutOfBoundsException e){
+            System.out.println("add() error!");
+        }
+        try {
+            test.remove(1);
+        } catch (IndexOutOfBoundsException e){
+            System.out.println("remove() error!");
+        }
+        try {
+            test.add(1,"test");
+            System.out.println(test);
+            test.add(2,"test2");
+            System.out.println(test);
+            test.add(4, "test3");
+        } catch (IndexOutOfBoundsException e){
+            System.out.println("Error adding test3!");
+        }
+        //
+    }
 }

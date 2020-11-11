@@ -18,9 +18,15 @@ public class SuperArray{
         return true;
     }
     public String get(int index){
+        if (index < 0 || index >= size()){
+            throw new IndexOutOfBoundsException("Index " + index + " must be within bounds of SuperArray.");
+        }
         return data[index];
     }
     public String set(int index, String element){
+        if (index < 0 || index >= size()){
+            throw new IndexOutOfBoundsException("Index " + index + " must be within bounds of SuperArray.");
+        }
         String replaced = data[index];
         data[index] = element;
         return replaced;
@@ -58,13 +64,24 @@ public class SuperArray{
         return has;
     }
     public SuperArray(int initialCapacity){
+        if(initialCapacity < 0){
+            throw new IllegalArgumentException("initialCapacity " + initialCapacity + " cannot be negative.");
+        }
         data = new String[initialCapacity];
         size = 0;
+        
     }
     public void add(int index, String element){
         // first check when adding to the last index if we go over capacity, we resize().
-        if (size ==  data.length) resize();
+        if (index < 0 || index > size()){
+            throw new IndexOutOfBoundsException("Index " + index  + " must be within bounds of SuperArray.");
+        }
+        if (size == data.length) resize();
         if (data[index] == null) data[index] = element;
+        if (index == size) {
+            data[index] = element;
+            size++;
+        }
         else {
             for (int i = size - 1; i >= index; i--){
                 data[i+1] = data[i];
@@ -74,6 +91,9 @@ public class SuperArray{
         }
     }
     public String remove(int index){
+        if (index < 0 || index >= size()){
+            throw new IndexOutOfBoundsException("Index " + index  + " must be within bounds of SuperArray.");
+        }
         String removedString = data[index];
         for (int i=index; i<size; i++) {
             data[i] = data[i+1];
@@ -122,14 +142,3 @@ public class SuperArray{
         return equals;
     }
 }
-/*
-
-e) Finally write another static method in your Demo.java to take two SuperArrays and merge them together 
-public static SuperArray zip(SuperArray a, SuperArray b){  }
-return a new SuperArray that contains all elements of a, and all elements of b in the following sequence:
-[a0, b0, a1, b1, a2, b2 ... ]
-When either SuperArray is longer and you run out of strings in one, just fill the remaining elements with the rest of the longer SuperArray. 
-
-zip (  ["a","b","c","d","e","f"], ["0","1","2","3"] )  returns    ["a","0","b","1","c","2", "d","3","e","f"]
-zip (  ["a","b","c"], ["0","1","2","3","4"] )  returns    ["a","0","b","1","c","2","3","4"]  )
-*/
