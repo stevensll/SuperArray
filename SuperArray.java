@@ -74,7 +74,7 @@ public class SuperArray{
     public void add(int index, String element){
         // first check when adding to the last index if we go over capacity, we resize().
         if (index < 0 || index > size()){
-            throw new IndexOutOfBoundsException("Index " + index  + " must be within bounds of SuperArray.");
+            throw new IndexOutOfBoundsException("Index " + index  + " must be <= size");
         }
         if (size == data.length) resize();
         if (data[index] == null) data[index] = element;
