@@ -95,7 +95,7 @@ public class SuperArray{
             throw new IndexOutOfBoundsException("Index " + index  + " must be within bounds of SuperArray.");
         }
         String removedString = data[index];
-        for (int i=index; i<size; i++) {
+        for (int i=index; i<size-1; i++) {
             data[i] = data[i+1];
         }
         size--;
